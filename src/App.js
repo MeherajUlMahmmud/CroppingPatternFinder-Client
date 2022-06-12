@@ -26,6 +26,7 @@ function App() {
                 className="App flooting "
                 style={{
                     backgroundColor: "white",
+                    width: "100%",
                 }}
             >
                 <input
@@ -35,7 +36,7 @@ function App() {
                     placeholder="🔍 Filter Cropping Pattern"
                 />
 
-                <div className="dataset_row flooting">
+                <div className="dataset_row flooting index">
                     <div className="numeric_data">ID</div>
                     <div className="catagorical_data">Cropping pattern</div>
                     <div className="numeric_data">Area(ha)</div>
@@ -49,19 +50,43 @@ function App() {
                 {filteredCroppingPatternData.map((item, index) => {
                     return (
                         <div className="dataset_row" key={index}>
-                            <div className="numeric_data">{item.id}</div>
-                            <div className="catagorical_data">{item.cp}</div>
                             <div className="numeric_data">
-                                {item["area(ha)"]}
+                                <div className="mobile">ID : {item.id}</div>
+                                <div className="index">{item.id}</div>
+                            </div>
+                            <div className="catagorical_data">
+                                <div className="mobile">CP : {item.cp}</div>
+                                <div className="index"> {item.cp}</div>
                             </div>
                             <div className="numeric_data">
-                                {item["%of NAC"]}
+                                <div className="mobile">
+                                    Area(ha) : {item["area(ha)"]}
+                                </div>
+                                <div className="index">{item["area(ha)"]}</div>
                             </div>
                             <div className="numeric_data">
-                                {item["No. of district"]}
+                                <div className="mobile">
+                                    % of NAC : {item["%of NAC"]}
+                                </div>
+                                <div className="index"> {item["%of NAC"]}</div>
                             </div>
                             <div className="numeric_data">
-                                {item["No of upazila"]}
+                                <div className="mobile">
+                                    No. of district : {item["No. of district"]}
+                                </div>
+                                <div className="index">
+                                    {" "}
+                                    {item["No. of district"]}
+                                </div>
+                            </div>
+                            <div className="numeric_data">
+                                <div className="mobile">
+                                    No of upazila : {item["No of upazila"]}
+                                </div>
+                                <div className="index">
+                                    {" "}
+                                    {item["No of upazila"]}
+                                </div>
                             </div>
                         </div>
                     );
