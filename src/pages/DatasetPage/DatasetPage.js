@@ -83,6 +83,19 @@ const DatasetPage = () => {
 
     return (
         <div className="DatasetPageContainer">
+            <p className="headerText">Found Districts</p>
+            <div>
+                <iframe
+                    title=""
+                    aria-label="Map"
+                    id="datawrapper-chart-EkIed"
+                    src="https://datawrapper.dwcdn.net/EkIed/1/"
+                    scrolling="no"
+                    style={{ border: "none" }}
+                    width="100%"
+                    height="683"
+                ></iframe>
+            </div>
             <p className="headerText">
                 District Wise Croping pattenr frequency
             </p>
@@ -96,12 +109,17 @@ const DatasetPage = () => {
                 {districtCp.map((item, index) => {
                     return (
                         <div key={index}>
-                            {item.dis.includes(selectedCp) && (
-                                <>
-                                    <p>{item.dis}</p>
-                                    <ChartRow item={item} />
-                                </>
-                            )}
+                            {
+                                //item.dis.includes(selectedCp) upper and lower case
+                                item.dis
+                                    .toLowerCase()
+                                    .includes(selectedCp.toLowerCase()) && (
+                                    <>
+                                        <p>{item.dis}</p>
+                                        <ChartRow item={item} />
+                                    </>
+                                )
+                            }
                         </div>
                     );
                 })}
@@ -122,7 +140,7 @@ const DatasetPage = () => {
                             <div
                                 className="row"
                                 style={{
-                                    width: `${item.Frequency * 7}px`,
+                                    width: `${(item.Frequency % 200) * 7}px`,
                                 }}
                             >
                                 {item.Frequency}
