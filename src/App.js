@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import CpList from "./pages/CpList.js";
 import HomePage from "./pages/Home/HomePage.js";
 import "./app.scss";
+import AboutPage from "./pages/about/AboutPage.js";
+import DatasetPage from "./pages/DatasetPage/DatasetPage.js";
 
 const App = () => {
     const [page, setPage] = useState("#home");
@@ -24,6 +26,16 @@ const App = () => {
                 >
                     HomePage
                 </div>
+                <div
+                    className={
+                        page === "#dataset"
+                            ? "navigationBtn active"
+                            : "navigationBtn"
+                    }
+                    onClick={() => handlePageChange("#dataset")}
+                >
+                    Dataset
+                </div>
 
                 <div
                     className={
@@ -35,10 +47,23 @@ const App = () => {
                 >
                     CP List
                 </div>
+
+                <div
+                    className={
+                        page === "#about"
+                            ? "navigationBtn active"
+                            : "navigationBtn"
+                    }
+                    onClick={() => handlePageChange("#about")}
+                >
+                    About
+                </div>
             </div>
             <div className="Window">
-                <HomePage />
-                <CpList />
+                {page === "#home" && <HomePage />}
+                {page === "#cpList" && <CpList />}
+                {page === "#about" && <AboutPage />}
+                {page === "#dataset" && <DatasetPage />}
             </div>
         </div>
     );

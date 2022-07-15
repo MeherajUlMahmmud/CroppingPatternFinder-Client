@@ -1,0 +1,66 @@
+.DatasetPageContainer {
+    .searchInput {
+        width: 200px;
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 0 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        background-color: #fff;
+        outline: none;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    }
+    .DisWiseChartContainer {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+
+        overflow-x: auto;
+        .chartContainer {
+            width: 100%;
+            height: calc(60vh - 150px);
+            display: flex;
+            overflow-y: auto;
+
+            .chartRows {
+                width: 100px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                background-color: #fafafa;
+                border: 1px solid #e0e0e0;
+                align-items: center;
+                padding-top: 20px;
+
+                &:hover {
+                    background-color: #fff;
+                }
+
+                .barHeight {
+                    width: 80px;
+                    cursor: pointer;
+
+                    //hover
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+
+                .lebel {
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: #000;
+                    margin-bottom: 5px;
+                    background-color: #fff;
+                    width: 100px;
+                    text-align: center;
+                    border-top: 1px solid #e0e0e0;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
