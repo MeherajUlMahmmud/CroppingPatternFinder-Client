@@ -1,4 +1,12 @@
 .DatasetPageContainer {
+    .headerText {
+        border-bottom: 2px solid #e0e0e0;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding-bottom: 10px;
+        padding-top: 20px;
+    }
+    padding-bottom: 200px;
     .searchInput {
         width: 200px;
         height: 40px;
@@ -62,5 +70,32 @@
                 }
             }
         }
+    }
+    // Pattern Frequency
+
+    .CpFrequencyContainer {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        height: 700px;
+        overflow-y: auto;
+
+        .CpFrequencyContainerRow {
+            display: flex;
+            gap: 10px;
+            padding: 3px 0;
+
+            .lebel {
+                min-width: 280px;
+                padding-right: 20px;
+            }
+
+            .row {
+                background-color: aqua;
+                color: #000;
+            }
+        }
+    }
+    .CpFrequencyContainer::-webkit-scrollbar {
+        display: none;
     }
 }

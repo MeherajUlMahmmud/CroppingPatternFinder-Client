@@ -18294,6 +18294,15 @@ const cpData = [
 
 const croppingPatternData = [
     {
+        id: "00",
+        cp: "Unknown",
+        "area(ha)": "Unknown",
+        "%of NAC": "Unknown",
+        "No. of district": "Unknown",
+        "No of upazila": "Unknown",
+    },
+
+    {
         id: "001",
         cp: "Boro-Fallow-T.Aman",
         "area(ha)": "2306005",

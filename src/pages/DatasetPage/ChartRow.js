@@ -3,14 +3,18 @@ import React, { useState } from "react";
 import "./datasetPage.scss";
 
 const ChartRow = ({ item }) => {
-    const [isHovering, setIsHovering] = useState(false);
-
     return (
         <div className="chartContainer">
             {item.cp.map((cp, index) => {
                 return (
                     <div className="chartRows" key={index}>
-                        {item.count[index]}
+                        <div
+                            style={{
+                                color: "black",
+                            }}
+                        >
+                            {item.count[index]}
+                        </div>
 
                         <div
                             className="barHeight"
