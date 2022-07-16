@@ -24,7 +24,7 @@ const App = () => {
                     }
                     onClick={() => handlePageChange("#home")}
                 >
-                    HomePage
+                    CP Prediction
                 </div>
                 <div
                     className={

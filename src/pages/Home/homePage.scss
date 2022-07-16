@@ -1,0 +1,123 @@
+.HomePage_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+    .HomePage_Header {
+        height: 300px;
+        width: calc(100% - 40px);
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px 0px;
+        color: #252533;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        background-image: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.2) 0%,
+                rgba(0, 0, 0, 0.2) 100%
+            ),
+            url(https://img.freepik.com/free-vector/organic-flat-farming-profession-illustration_23-2148897363.jpg?w=2000);
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        h1 {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 0px;
+            padding: 0px;
+            color: #e9eee9;
+            border: #252533 1px solid;
+            background-color: #252533;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    }
+    .form_input_container_top {
+        width: calc(100% - 40px);
+        border-radius: 10px;
+
+        padding: 10px;
+        background-color: cadetblue;
+        display: grid;
+        //grid  auto columns;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px 10px;
+        .dropdownLabel {
+            padding-top: 10px;
+        }
+        .select_container {
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px #00000029;
+            margin-top: 10px;
+            cursor: pointer;
+
+            option {
+                color: #252533;
+                font-size: 15px;
+                padding: 10px;
+                cursor: pointer;
+                border-radius: 5px;
+                &:hover {
+                    background-color: #d47b84;
+                    color: #e9eee9;
+                }
+            }
+        }
+
+        .select_container_Inp {
+            width: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px #00000029;
+            margin-top: 10px;
+            option {
+                color: #252533;
+                font-size: 15px;
+                padding: 10px;
+                cursor: pointer;
+                border-radius: 5px;
+                &:hover {
+                    background-color: #d47b84;
+                    color: #e9eee9;
+                }
+            }
+        }
+    }
+    .submit_button {
+        width: 40%;
+        background-color: #d13241;
+        color: #e9eee9;
+        border: none;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+        margin: 30px 5px;
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+            background-color: #d47b84;
+            color: #e9eee9;
+        }
+    }
+}
