@@ -54,17 +54,17 @@ const HomePage = () => {
 		console.log(formData);
 
 		axios({
-			method: "post",
-			url: "http://localhost:8000/api/predict",
-			data: formData,
-		})
-			.then((res) => {
-				console.log(res.data);
-				setPrediction(res.data);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
+            method: "post",
+            url: "https://cropping-api.herokuapp.com/api/predict",
+            data: formData,
+        })
+            .then((res) => {
+                console.log(res.data);
+                setPrediction(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
 	};
 
 	return (
