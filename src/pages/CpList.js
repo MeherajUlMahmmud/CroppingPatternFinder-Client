@@ -91,7 +91,7 @@ function App() {
                     );
                 })}
             </div>
-            <div className="app_footer">footer</div>
+            <div className="app_footer"></div>
         </div>
     );
 }

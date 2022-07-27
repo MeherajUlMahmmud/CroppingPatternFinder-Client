@@ -74,6 +74,110 @@ const HomePage = () => {
             });
     };
 
+    const testFormData1 = {
+        land_type: "0",
+        topography: "0",
+        water_recession: "1",
+        drainage_condition: "2",
+        soil_texture: "3",
+        soil_consistency_moist: "1",
+        soil_moisture: "1",
+        soil_reaction: "1",
+        soil_salinity: "4",
+        organic_matter: "2",
+        farming_method: "2",
+        soil_color: "0",
+        Temp_Robi: 21.49,
+        Temp_Kharif1: 26.18,
+        Temp_Kharif2: 28.838,
+        Rain_Rabi: 80.35,
+        Rain_Kharif1: 643.5,
+        Rain_Kharif2: 2353.05,
+        model_number: "1",
+        //3.0
+    };
+
+    const testFormData2 = {
+        land_type: "3",
+        topography: "0",
+        water_recession: "3",
+        drainage_condition: "5",
+        soil_texture: "1",
+        soil_consistency_moist: "1",
+        soil_moisture: "1",
+        soil_reaction: "3",
+        soil_salinity: "4",
+        organic_matter: "1",
+        farming_method: "3",
+        soil_color: "0",
+        Temp_Robi: 20.8,
+        Temp_Kharif1: 28.26,
+        Temp_Kharif2: 28.765,
+        Rain_Rabi: 61.5,
+        Rain_Kharif1: 347.0,
+        Rain_Kharif2: 1304.0,
+        model_number: "1",
+        // 58.0
+    };
+
+    const testFormData3 = {
+        land_type: "1",
+        topography: "0",
+        water_recession: "2",
+        drainage_condition: "3",
+        soil_texture: "2",
+        soil_consistency_moist: "1",
+        soil_moisture: "1",
+        soil_reaction: "1",
+        soil_salinity: "0",
+        organic_matter: "2",
+        farming_method: "2",
+        soil_color: "0",
+        Temp_Robi: 21.83,
+        Temp_Kharif1: 27.19,
+        Temp_Kharif2: 28.83,
+        Rain_Rabi: 88.08,
+        Rain_Kharif1: 453.0,
+        Rain_Kharif2: 52336.0,
+        model_number: "1",
+
+        // 36.0
+    };
+    const testFormDataRandom = {
+        land_type: Math.floor(Math.random() * 4).toString(),
+        topography: Math.floor(Math.random() * 3).toString(),
+        water_recession: Math.floor(Math.random() * 7).toString(),
+        drainage_condition: Math.floor(Math.random() * 6).toString(),
+        soil_texture: Math.floor(Math.random() * 6).toString(),
+        soil_consistency_moist: Math.floor(Math.random() * 6).toString(),
+        soil_moisture: Math.floor(Math.random() * 5).toString(),
+        soil_reaction: Math.floor(Math.random() * 7).toString(),
+        soil_salinity: Math.floor(Math.random() * 7).toString(),
+        organic_matter: Math.floor(Math.random() * 6).toString(),
+        farming_method: Math.floor(Math.random() * 4).toString(),
+        soil_color: Math.floor(Math.random() * 10).toString(),
+        Temp_Robi:
+            Math.floor(Math.random() * (30 - 18 + 1) + 18) + Math.random(),
+        Temp_Kharif1:
+            Math.floor(Math.random() * (29 - 19 + 1) + 19) + Math.random(),
+        Temp_Kharif2:
+            Math.floor(Math.random() * (35 - 20 + 1) + 20) + Math.random(),
+        Rain_Rabi:
+            Math.floor(Math.random() * (200 - 30 + 1) + 30) + Math.random(),
+        Rain_Kharif1:
+            Math.floor(Math.random() * (1100 - 200 + 1) + 200) + Math.random(),
+        Rain_Kharif2:
+            Math.floor(Math.random() * (3000 - 1000 + 1) + 1000) +
+            Math.random(),
+        model_number: "1",
+    };
+
+    const setTestDataToForm = (e) => {
+        setFormData(e);
+    };
+
+    const [showPopup, setShowPopup] = useState(false);
+
     return (
         <div className="HomePage_container">
             <div className="HomePage_Header">
@@ -102,6 +206,163 @@ const HomePage = () => {
                 <div>{formData.Rain_Rabi}</div>
                 <div>{formData.Rain_Kharif1}</div>
                 <div>{formData.Rain_Kharif2}</div> */}
+            </div>
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                    width: "100%",
+                }}
+            >
+                <h1
+                    style={{
+                        cursor: "pointer",
+                    }}
+                    // onClick={() => setTestDataToForm(testFormDataRandom)}
+                    onClick={() => setShowPopup(!showPopup)}
+                >
+                    ⚙️
+                </h1>
+                {showPopup && (
+                    <div className="popup_window">
+                        <div className="popup_content">
+                            <div className="popup_content_body">
+                                <div className="popup_content_left">
+                                    <h3>Input values</h3>
+                                    <div className="data_container">
+                                        <div>
+                                            <p>
+                                                Land Type : {formData.land_type}{" "}
+                                            </p>
+                                            <p>
+                                                Topography :{" "}
+                                                {formData.topography}{" "}
+                                            </p>
+                                            <p>
+                                                Water Recession :{" "}
+                                                {formData.water_recession}{" "}
+                                            </p>
+                                            <p>
+                                                Drainage Condition :{" "}
+                                                {formData.drainage_condition}{" "}
+                                            </p>
+                                            <p>
+                                                Soil Texture :{" "}
+                                                {formData.soil_texture}{" "}
+                                            </p>
+                                            <p>
+                                                Soil Consistency Moist :{" "}
+                                                {
+                                                    formData.soil_consistency_moist
+                                                }{" "}
+                                            </p>
+                                            <p>
+                                                Soil Moisture :{" "}
+                                                {formData.soil_moisture}{" "}
+                                            </p>
+                                            <p>
+                                                Soil Reaction :{" "}
+                                                {formData.soil_reaction}{" "}
+                                            </p>
+                                            <p>
+                                                Soil Salinity :{" "}
+                                                {formData.soil_salinity}{" "}
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                Organic Matter :{" "}
+                                                {formData.organic_matter}{" "}
+                                            </p>
+                                            <p>
+                                                Farming Method :{" "}
+                                                {formData.farming_method}{" "}
+                                            </p>
+                                            <p>
+                                                Soil Color :{" "}
+                                                {formData.soil_color}{" "}
+                                            </p>
+                                            <p>
+                                                Temp Robi : {formData.Temp_Robi}{" "}
+                                            </p>
+                                            <p>
+                                                Temp Kharif1 :{" "}
+                                                {formData.Temp_Kharif1}{" "}
+                                            </p>
+                                            <p>
+                                                Temp Kharif2 :{" "}
+                                                {formData.Temp_Kharif2}{" "}
+                                            </p>
+                                            <p>
+                                                Rain Rabi : {formData.Rain_Rabi}{" "}
+                                            </p>
+                                            <p>
+                                                Rain Kharif1 :{" "}
+                                                {formData.Rain_Kharif1}{" "}
+                                            </p>
+                                            <p>
+                                                Rain Kharif2 :{" "}
+                                                {formData.Rain_Kharif2}{" "}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="popup_content_right">
+                                    <button
+                                        type="button"
+                                        className="btn"
+                                        onClick={() =>
+                                            setTestDataToForm(testFormData1)
+                                        }
+                                    >
+                                        set values for cp 3.0{" "}
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        className="btn"
+                                        onClick={() =>
+                                            setTestDataToForm(testFormData2)
+                                        }
+                                    >
+                                        set values for cp 58{" "}
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        className="btn"
+                                        onClick={() =>
+                                            setTestDataToForm(testFormData3)
+                                        }
+                                    >
+                                        set values for cp 36.0{" "}
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        className="btn"
+                                        onClick={() =>
+                                            setTestDataToForm(
+                                                testFormDataRandom
+                                            )
+                                        }
+                                    >
+                                        set random values for cp
+                                    </button>
+                                </div>
+                            </div>
+
+                            <button
+                                type="button"
+                                className="close"
+                                onClick={() => setShowPopup(!showPopup)}
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                )}
             </div>
 
             <div className="form_input_container_top">
@@ -283,8 +544,8 @@ const HomePage = () => {
             </div>
 
             <h3>
-                Natural crop production without irrigationCp prediction form Cp
-                prediction form
+                Natural crop production without irrigation form Cp prediction
+                form
             </h3>
             <div className="form_input_container_top">
                 <div>
@@ -553,6 +814,7 @@ const HomePage = () => {
 
                     {!isLOading && prediction ? (
                         <div className="prediction_container_header">
+                            CP-id : {prediction} -- test view
                             {croppingPatternData.map((data, index) => {
                                 return (
                                     <div
