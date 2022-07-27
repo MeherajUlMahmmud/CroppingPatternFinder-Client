@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import Slider from "react-input-slider";
 import axios from "axios";
+import { croppingPatternData } from "../../data";
 import "./homePage.scss";
 import {
     land_types,
@@ -40,6 +42,8 @@ const HomePage = () => {
     });
     const [prediction, setPrediction] = useState(null);
 
+    const [isLOading, setIsLoading] = useState(false);
+
     const handleChange = (e) => {
         console.log(e.target.name);
         const { name, value } = e.target;
@@ -52,6 +56,7 @@ const HomePage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
+        setIsLoading(true);
 
         axios({
             method: "post",
@@ -61,9 +66,11 @@ const HomePage = () => {
             .then((res) => {
                 console.log(res.data);
                 setPrediction(res.data);
+                setIsLoading(false);
             })
             .catch((err) => {
                 console.log(err);
+                setIsLoading(false);
             });
     };
 
@@ -340,70 +347,183 @@ const HomePage = () => {
 
                 <div>
                     <label className="dropdownLabel">Temp Robi</label>
-                    <input
+                    {/* <input
                         type="number"
                         className="select_container_Inp"
                         name="Temp_Robi"
                         onChange={(data) => {
                             handleChange(data);
                         }}
-                    />
+                    /> */}
+                    <div className="sliderInput">
+                        <Slider
+                            xstep={0.2}
+                            axis="x"
+                            x={formData.Temp_Robi}
+                            onChange={({ x }) =>
+                                handleChange({
+                                    target: { name: "Temp_Robi", value: x },
+                                })
+                            }
+                            xmin={18.0}
+                            xmax={25.0}
+                        />
+                    </div>
+
+                    <div className="slider_value">
+                        Value: {formData.Temp_Robi}
+                    </div>
                 </div>
                 <div>
                     <label className="dropdownLabel">Temp Kharif1</label>
-                    <input
+                    {/* <input
                         type="number"
                         className="select_container_Inp"
                         onChange={(data) => {
                             handleChange(data);
                         }}
                         name="Temp_Kharif1"
-                    />
+                    /> */}
+
+                    <div className="sliderInput">
+                        <Slider
+                            xstep={0.2}
+                            axis="x"
+                            x={formData.Temp_Kharif1}
+                            onChange={({ x }) =>
+                                handleChange({
+                                    target: { name: "Temp_Kharif1", value: x },
+                                })
+                            }
+                            xmin={19.0}
+                            xmax={29.0}
+                        />
+                    </div>
+
+                    <div className="slider_value">
+                        Value: {formData.Temp_Kharif1}
+                    </div>
                 </div>
                 <div>
                     <label className="dropdownLabel">Temp Kharif 2</label>
-                    <input
+                    {/* <input
                         type="number"
                         className="select_container_Inp"
                         onChange={(data) => {
                             handleChange(data);
                         }}
                         name="Temp_Kharif2"
-                    />
+                    /> */}
+
+                    <div className="sliderInput">
+                        <Slider
+                            xstep={0.2}
+                            axis="x"
+                            x={formData.Temp_Kharif2}
+                            onChange={({ x }) =>
+                                handleChange({
+                                    target: { name: "Temp_Kharif2", value: x },
+                                })
+                            }
+                            xmin={20.0}
+                            xmax={35.0}
+                        />
+                    </div>
+
+                    <div className="slider_value">
+                        Value: {formData.Temp_Kharif2}
+                    </div>
                 </div>
                 <div>
                     <label className="dropdownLabel">Rain Robi</label>
-                    <input
+                    {/* <input
                         type="number"
                         className="select_container_Inp"
                         name="Rain_Rabi"
                         onChange={(e) => handleChange(e)}
-                    />
+                    /> */}
+
+                    <div className="sliderInput">
+                        <Slider
+                            xstep={0.2}
+                            axis="x"
+                            x={formData.Rain_Rabi}
+                            onChange={({ x }) =>
+                                handleChange({
+                                    target: { name: "Rain_Rabi", value: x },
+                                })
+                            }
+                            xmin={31.0}
+                            xmax={194.0}
+                        />
+                    </div>
+
+                    <div className="slider_value">
+                        Value: {formData.Rain_Rabi}
+                    </div>
                 </div>
                 <div>
                     <label className="dropdownLabel">Rain Kharif1</label>
-                    <input
+                    {/* <input
                         type="number"
                         className="select_container_Inp"
                         onChange={(e) => handleChange(e)}
                         name="Rain_Kharif1"
-                    />
+                    /> */}
+
+                    <div className="sliderInput">
+                        <Slider
+                            xstep={0.2}
+                            axis="x"
+                            x={formData.Rain_Kharif1}
+                            onChange={({ x }) =>
+                                handleChange({
+                                    target: { name: "Rain_Kharif1", value: x },
+                                })
+                            }
+                            xmin={200.0}
+                            xmax={1100.0}
+                        />
+                    </div>
+
+                    <div className="slider_value">
+                        Value: {formData.Rain_Kharif1}
+                    </div>
                 </div>
                 <div>
                     <label className="dropdownLabel">Rain Kharif2</label>
-                    <input
+                    {/* <input
                         type="number"
                         className="select_container_Inp"
                         onChange={(e) => handleChange(e)}
                         name="Rain_Kharif2"
-                    />
+                    /> */}
+
+                    <div className="sliderInput">
+                        <Slider
+                            xstep={0.2}
+                            axis="x"
+                            x={formData.Rain_Kharif2}
+                            onChange={({ x }) =>
+                                handleChange({
+                                    target: { name: "Rain_Kharif2", value: x },
+                                })
+                            }
+                            xmin={1000.0}
+                            xmax={3000.0}
+                        />
+                    </div>
+
+                    <div className="slider_value">
+                        Value: {formData.Rain_Kharif2}
+                    </div>
                 </div>
             </div>
 
             <h3>Model Selection</h3>
             <div className="form_input_container_top">
                 <div>
-                    <label className="dropdownLabel">Model Number</label>
+                    <label className="dropdownLabel">Model With Accuracy</label>
                     <select
                         className="select_container"
                         onChange={(data) => {
@@ -411,9 +531,15 @@ const HomePage = () => {
                         }}
                         name="model_number"
                     >
-                        <option value="1">Decision Tree</option>
-                        <option value="2">Random Forest Classifier</option>
-                        <option value="3">K-nearest Neighbours</option>
+                        <option value="2">
+                            Random Forest Classifier -- 96% accuracy
+                        </option>
+                        <option value="1">
+                            Decision Tree -- 95.4% accuracy
+                        </option>
+                        <option disabled value="3">
+                            K-nearest Neighbours -- 94.4% accuracy
+                        </option>
                     </select>
                 </div>
             </div>
@@ -421,7 +547,42 @@ const HomePage = () => {
                 Predict Cropping Pattern
             </button>
 
-            <div className="prediction_container">Result: {prediction}</div>
+            {isLOading && <div className="loader"></div>}
+
+            {!isLOading && prediction && (
+                <div className="prediction_container">
+                    {croppingPatternData.map((data, index) => {
+                        return (
+                            <div
+                                key={index}
+                                className="prediction_container_item"
+                            >
+                                {
+                                    //string to number
+                                    Number(data.id) === Number(prediction) && (
+                                        <div className="prediction_container_item_selected">
+                                            <div className="prediction_container_item_selected_text">
+                                                <div>
+                                                    Robi:{" "}
+                                                    {data.cp.split("-")[0]}
+                                                </div>
+                                                <div>
+                                                    Kharif1:{" "}
+                                                    {data.cp.split("-")[1]}
+                                                </div>
+                                                <div>
+                                                    Kharif2:{" "}
+                                                    {data.cp.split("-")[2]}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            </div>
+                        );
+                    })}
+                </div>
+            )}
         </div>
     );
 };
