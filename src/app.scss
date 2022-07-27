@@ -1,7 +1,7 @@
 .AppContainer {
     display: flex;
     background-color: #d3d3d3;
-    gap: 10px;
+    gap: 5px;
 
     .Navigator {
         flex: 1;
@@ -61,7 +61,7 @@
         height: 100vh;
         overflow: auto;
         background-color: #5a55a3;
-        padding-left: 20px;
+        padding-left: 10px;
         color: white;
     }
 }

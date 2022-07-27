@@ -1,0 +1,143 @@
+.about_page {
+    .container_navigator_top {
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+        margin-bottom: 10px;
+        margin-right: 5px;
+
+        div {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            box-sizing: border-box;
+            padding: 20px;
+            background: #fff;
+
+            li {
+                list-style: none;
+                margin-right: 20px;
+                font-size: 25px;
+                font-weight: bold;
+
+                a {
+                    text-decoration: none;
+                    color: #1ac;
+                }
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            div {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+        }
+    }
+
+    .header {
+        display: flex;
+        background-color: #fff;
+        padding: 10px 20px;
+        color: #757575;
+        border-radius: 0;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        gap: 10px;
+        // margin-top: 60px;
+        // height: 1000px;
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        div {
+            font-size: 40px;
+            padding-top: 0px;
+            padding-bottom: 30px;
+        }
+        p {
+            font-size: 15px;
+            color: #000;
+            max-width: 530px;
+        }
+        .top_image {
+            width: 100%;
+            min-width: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-height: 300px;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: fill;
+            }
+        }
+    }
+
+    .body_container {
+        margin-right: 5px;
+
+        .about_us_container {
+            // .Collapsible {
+            //     background-color: #fff;
+            //     color: #757575;
+            //     padding: 10px;
+            //     margin: 10px;
+
+            //     p {
+            //         background-color: #000;
+            //     }
+            // }
+            .Collapsible {
+                background-color: rgb(255, 255, 255);
+                color: #757575;
+                margin-bottom: 10px;
+
+                .inner_gid_collapsible {
+                    display: grid;
+                    //grid auto column
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 10px;
+                }
+            }
+
+            //The content within the collaspable area
+            .Collapsible__contentInner {
+                padding: 10px;
+                border: 1px solid #757575;
+                border-top: 0;
+
+                p {
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                    line-height: 20px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            //The link which when clicked opens the collapsable area
+            .Collapsible__trigger {
+                display: block;
+                font-weight: 400;
+                text-decoration: none;
+                position: relative;
+                // border: 1px solid white;
+                padding: 10px;
+                background: #252533;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+}

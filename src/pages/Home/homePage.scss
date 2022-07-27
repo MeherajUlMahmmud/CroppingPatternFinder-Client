@@ -113,22 +113,62 @@
             margin-top: 10px;
         }
     }
-    .submit_button {
-        width: 40%;
-        background-color: #d13241;
-        color: #e9eee9;
-        border: none;
+
+    .prediction_container {
+        width: 100%;
+        display: flex;
+        background-color: #fff;
+        align-items: center;
+        color: #252533;
         padding: 10px;
-        font-size: 20px;
+        margin-top: 20px;
+        width: calc(100% - 40px);
         border-radius: 5px;
-        margin: 30px 5px;
-        text-align: center;
-        margin-bottom: 10px;
-        font-weight: bold;
-        cursor: pointer;
-        &:hover {
-            background-color: #d47b84;
+        gap: 30px;
+
+        .submit_button {
+            height: 60px;
+            width: 40%;
+            background-color: #d13241;
             color: #e9eee9;
+            border: none;
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 5px;
+
+            text-align: center;
+
+            font-weight: bold;
+            cursor: pointer;
+            &:hover {
+                background-color: #d47b84;
+                color: #e9eee9;
+            }
+        }
+        .prediction_output {
+            flex: 1;
+
+            .prediction_container_header {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .prediction_row:nth-child(odd) {
+                background-color: #f5f5f5;
+            }
+            .prediction_row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px;
+                padding-right: 20px;
+
+                a {
+                    align-self: flex-end;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
         }
     }
 }
@@ -141,6 +181,7 @@
     height: 30px;
     -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 2s linear infinite;
+    align-self: center;
 }
 
 /* Safari */

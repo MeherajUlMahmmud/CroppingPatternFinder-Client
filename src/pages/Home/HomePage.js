@@ -53,7 +53,7 @@ const HomePage = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(formData);
         setIsLoading(true);
@@ -543,46 +543,107 @@ const HomePage = () => {
                     </select>
                 </div>
             </div>
-            <button className="submit_button" onClick={handleSubmit}>
-                Predict Cropping Pattern
-            </button>
 
-            {isLOading && <div className="loader"></div>}
+            <div className="prediction_container">
+                <button className="submit_button" onClick={handleSubmit}>
+                    🧠 Predict Cropping Pattern
+                </button>
+                <div className="prediction_output">
+                    {isLOading && <div className="loader"></div>}
 
-            {!isLOading && prediction && (
-                <div className="prediction_container">
-                    {croppingPatternData.map((data, index) => {
-                        return (
-                            <div
-                                key={index}
-                                className="prediction_container_item"
-                            >
-                                {
-                                    //string to number
-                                    Number(data.id) === Number(prediction) && (
-                                        <div className="prediction_container_item_selected">
-                                            <div className="prediction_container_item_selected_text">
-                                                <div>
-                                                    Robi:{" "}
-                                                    {data.cp.split("-")[0]}
+                    {!isLOading && prediction ? (
+                        <div className="prediction_container_header">
+                            {croppingPatternData.map((data, index) => {
+                                return (
+                                    <div
+                                        key={index}
+                                        className="prediction_container_item"
+                                    >
+                                        {
+                                            //string to number
+                                            Number(data.id) ===
+                                                Number(prediction) && (
+                                                <div className="prediction_container_item_selected">
+                                                    <div className="prediction_container_item_selected_text">
+                                                        <div className="prediction_row">
+                                                            <div>
+                                                                Robi:{" "}
+                                                                {
+                                                                    data.cp.split(
+                                                                        "-"
+                                                                    )[0]
+                                                                }
+                                                            </div>
+                                                            <a
+                                                                href={`https://www.google.com/search?q=${
+                                                                    data.cp.split(
+                                                                        "-"
+                                                                    )[0]
+                                                                }`}
+                                                                target="_blank"
+                                                            >
+                                                                🌐
+                                                            </a>
+                                                        </div>
+                                                        <div className="prediction_row">
+                                                            <div>
+                                                                Kharif1:{" "}
+                                                                {
+                                                                    data.cp.split(
+                                                                        "-"
+                                                                    )[1]
+                                                                }
+                                                            </div>
+                                                            <a
+                                                                href={`https://www.google.com/search?q=${
+                                                                    data.cp.split(
+                                                                        "-"
+                                                                    )[1]
+                                                                }`}
+                                                                target="_blank"
+                                                            >
+                                                                🌐
+                                                            </a>
+                                                        </div>
+                                                        {data.cp.split(
+                                                            "-"
+                                                        )[2] && (
+                                                            <div className="prediction_row">
+                                                                <div>
+                                                                    Kharif2:{" "}
+                                                                    {
+                                                                        data.cp.split(
+                                                                            "-"
+                                                                        )[2]
+                                                                    }
+                                                                </div>
+                                                                <a
+                                                                    href={`https://www.google.com/search?q=${
+                                                                        data.cp.split(
+                                                                            "-"
+                                                                        )[2]
+                                                                    }`}
+                                                                    target="_blank"
+                                                                >
+                                                                    🌐
+                                                                </a>
+                                                            </div>
+                                                        )}
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    Kharif1:{" "}
-                                                    {data.cp.split("-")[1]}
-                                                </div>
-                                                <div>
-                                                    Kharif2:{" "}
-                                                    {data.cp.split("-")[2]}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )
-                                }
-                            </div>
-                        );
-                    })}
+                                            )
+                                        }
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    ) : (
+                        <div className="prediction_container_header">
+                            {!isLOading && <div> No prediction dobe yet</div>}
+                        </div>
+                    )}
                 </div>
-            )}
+            </div>
         </div>
     );
 };
