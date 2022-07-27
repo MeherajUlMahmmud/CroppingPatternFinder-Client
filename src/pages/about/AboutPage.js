@@ -14,7 +14,7 @@ const AboutPage = () => {
                         <a href="#About_Crops">Crops & dataset </a>
                     </li>
                     <li>
-                        <a href="#third">Third</a>
+                        <a href="#Contributors">Contributors</a>
                     </li>
                 </div>
             </div>
@@ -224,7 +224,7 @@ const AboutPage = () => {
                 </div>
                 <div className="about_us_container">
                     <h1>References</h1>
-                    <Collapsible trigger="Papers and Links">
+                    <Collapsible trigger="Papers, Links & References">
                         <ol>
                             <li>
                                 Food and Agriculture Organization (FAO) of the
@@ -280,9 +280,30 @@ const AboutPage = () => {
                 </div>
                 <div className="about_us_container">
                     <h1>Codebase</h1>
+                    <Collapsible trigger="🖱️ Codebase">
+                        Work in progress
+                    </Collapsible>
+                    <h1>Api</h1>
+                    <Collapsible trigger="🖱️ Api">Work in progress</Collapsible>
                 </div>
-                <div className="about_us_container">
+                <div id="Contributors" className="about_us_container">
                     <h1>Contributors</h1>
+                    <Collapsible trigger="🖱️ Contributors">
+                        <h5>Project Supervisor</h5>
+                        <p>
+                            🎓 Prof. Dr. Md. Mozammel Huq Azad Khan, CSE
+                            Department, East West University
+                            <a href="https://scholar.google.com/citations?hl=en&user=9K0sw1AAAAAJ">
+                                {" "}
+                                🔗
+                            </a>
+                        </p>
+                        <h5>Students</h5>
+                        <p>👨‍🎓 Shamima Yesmin (2018-2-60-008)</p>
+                        <p>👨‍🎓 Lata Rani Saha (2018-2-60-013)</p>
+                        <p>👨‍🎓 Sabbir Ahmed (2018-2-60-100)</p>
+                        <p>👨‍🎓 A K.M. Sadat (2018-2-60-127)</p>
+                    </Collapsible>
                 </div>
             </div>
         </div>
