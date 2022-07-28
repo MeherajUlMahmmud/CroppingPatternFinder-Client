@@ -901,7 +901,7 @@ const HomePage = () => {
                         </div>
                     ) : (
                         <div className="prediction_container_header">
-                            {!isLOading && <div> No prediction dobe yet</div>}
+                            {!isLOading && <div> No prediction done yet</div>}
                         </div>
                     )}
                 </div>
