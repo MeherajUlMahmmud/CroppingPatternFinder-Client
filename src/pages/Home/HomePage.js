@@ -18,7 +18,7 @@ import {
     soil_color,
 } from "../../database/uniqueData.js";
 
-const HomePage = () => {
+const HomePage = ({ language }) => {
     const [formData, setFormData] = useState({
         land_type: "1",
         topography: "0",
@@ -186,7 +186,9 @@ const HomePage = () => {
                         textAlign: "center",
                     }}
                 >
-                    Cropping Pattern Prediction Form
+                    {language === "en"
+                        ? "  Cropping Pattern Prediction Form"
+                        : "ক্রপিং প্যাটার্ন প্রেডিকশন ফর্ম"}
                 </h1>
                 {/* <div>{formData.land_type}</div>
                 <div>{formData.topography}</div>
@@ -224,24 +226,37 @@ const HomePage = () => {
                 >
                     ⚙️
                 </h1>
+
+                {/* language english and bangla */}
                 {showPopup && (
                     <div className="popup_window">
                         <div className="popup_content">
                             <div className="popup_content_body">
                                 <div className="popup_content_left">
-                                    <h3>Input values</h3>
+                                    <h3>
+                                        {language === "en"
+                                            ? "Input values"
+                                            : "ইনপুট মান"}
+                                    </h3>
                                     <div className="data_container">
                                         <div>
                                             <p>
-                                                Land Type : {formData.land_type}{" "}
+                                                {language === "en"
+                                                    ? "Land Type"
+                                                    : "জমির ধরণ"}
+                                                : {formData.land_type}{" "}
                                             </p>
                                             <p>
-                                                Topography :{" "}
-                                                {formData.topography}{" "}
+                                                {language === "en"
+                                                    ? "Topography"
+                                                    : "টপোগ্রাফি"}
+                                                : {formData.topography}{" "}
                                             </p>
                                             <p>
-                                                Water Recession :{" "}
-                                                {formData.water_recession}{" "}
+                                                {language === "en"
+                                                    ? "Water Recession"
+                                                    : "জল প্রত্যাহার"}
+                                                : {formData.water_recession}{" "}
                                             </p>
                                             <p>
                                                 Drainage Condition :{" "}
@@ -367,7 +382,10 @@ const HomePage = () => {
 
             <div className="form_input_container_top">
                 <div>
-                    <label className="dropdownLabel">Land Type</label>
+                    <label className="dropdownLabel">
+                        {" "}
+                        {language === "en" ? "Land Type" : "ভুমি শ্রেণী"}
+                    </label>
                     <select
                         className="select_container"
                         onChange={(data) => {
@@ -386,7 +404,9 @@ const HomePage = () => {
                     </select>
                 </div>
                 <div>
-                    <label className="dropdownLabel">Land Topography</label>
+                    <label className="dropdownLabel">
+                        {language === "en" ? "Topography" : "ভুমি বন্ধুরতা"}
+                    </label>
                     <select
                         className="select_container"
                         onChange={(data) => {
@@ -405,7 +425,11 @@ const HomePage = () => {
                     </select>
                 </div>
                 <div>
-                    <label className="dropdownLabel">Water Recession</label>
+                    <label className="dropdownLabel">
+                        {language === "en"
+                            ? "Water Recession"
+                            : "পানি অপসারন অবস্থা"}
+                    </label>
                     <select
                         className="select_container"
                         onChange={(data) => {
@@ -425,7 +449,11 @@ const HomePage = () => {
                 </div>
 
                 <div>
-                    <label className="dropdownLabel">Drainage Condition</label>
+                    <label className="dropdownLabel">
+                        {language === "en"
+                            ? "Drainage Condition"
+                            : "নিষ্কাশন ব্যবস্থা"}
+                    </label>
                     <select
                         className="select_container"
                         onChange={(data) => {
@@ -445,7 +473,9 @@ const HomePage = () => {
                 </div>
 
                 <div>
-                    <label className="dropdownLabel">Soil Texture</label>
+                    <label className="dropdownLabel">
+                        {language === "en" ? "Soil Texture" : "মৃত্তিকা বুনট"}
+                    </label>
                     <select
                         className="select_container"
                         onChange={(data) => {
@@ -464,7 +494,11 @@ const HomePage = () => {
                     </select>
                 </div>
                 <div>
-                    <label className="dropdownLabel">Soil Consistency</label>
+                    <label className="dropdownLabel">
+                        {language === "en"
+                            ? "Soil Consistency"
+                            : "মৃত্তিকা দৃঢ়তা"}
+                    </label>
                     <select
                         className="select_container"
                         onChange={(data) => {
@@ -485,7 +519,9 @@ const HomePage = () => {
                     </select>
                 </div>
                 <div>
-                    <label className="dropdownLabel">Soil Moisture</label>
+                    <label className="dropdownLabel">
+                        {language === "en" ? "Soil Moisture" : "আরহণযোগ্য রস"}
+                    </label>
                     <select
                         className="select_container"
                         onChange={(data) => {
@@ -504,7 +540,9 @@ const HomePage = () => {
                     </select>
                 </div>
                 <div>
-                    <label className="dropdownLabel">Soil Reaction</label>
+                    <label className="dropdownLabel">
+                        {language === "en" ? "Soil Reaction" : "প্রতিক্রিয়া "}
+                    </label>
                     <select
                         className="select_container"
                         onChange={(data) => {
@@ -523,7 +561,11 @@ const HomePage = () => {
                     </select>
                 </div>
                 <div>
-                    <label className="dropdownLabel">Soil Salinity</label>
+                    <label className="dropdownLabel">
+                        {language === "en"
+                            ? "Soil Salinity"
+                            : "মাটির লবণাক্ততা"}
+                    </label>
                     <select
                         className="select_container"
                         onChange={(data) => {
@@ -544,12 +586,15 @@ const HomePage = () => {
             </div>
 
             <h3>
-                Natural crop production without irrigation form Cp prediction
-                form
+                {language === "en"
+                    ? "Natural crop production without irrigation form Cp prediction form "
+                    : "পানি ব্যবহার ছাড়া স্বাভাবিক ফসল উৎপাদন প্রতিক্রিয়া ফর্ম"}
             </h3>
             <div className="form_input_container_top">
                 <div>
-                    <label className="dropdownLabel">Organic Matter</label>
+                    <label className="dropdownLabel">
+                        {language === "en" ? "Organic Matter" : "জৈব পদার্থ"}
+                    </label>
                     <select
                         className="select_container"
                         onChange={(data) => {
@@ -568,7 +613,11 @@ const HomePage = () => {
                     </select>
                 </div>
                 <div>
-                    <label className="dropdownLabel">Farming Method</label>
+                    <label className="dropdownLabel">
+                        {language === "en"
+                            ? "Farming Method"
+                            : "চাষাবাদ পদ্ধতি"}
+                    </label>
                     <select
                         className="select_container"
                         onChange={(data) => {
@@ -587,7 +636,9 @@ const HomePage = () => {
                     </select>
                 </div>
                 <div>
-                    <label className="dropdownLabel">Soil Color</label>
+                    <label className="dropdownLabel">
+                        {language === "en" ? "Soil Color" : "মৃত্তিকা রং"}
+                    </label>
                     <select
                         className="select_container"
                         onChange={(data) => {
@@ -607,7 +658,11 @@ const HomePage = () => {
                 </div>
 
                 <div>
-                    <label className="dropdownLabel">Temp Robi</label>
+                    <label className="dropdownLabel">
+                        {language === "en"
+                            ? "Temp Robi"
+                            : "রবি মৌসুমে তাপমাত্রা"}
+                    </label>
                     {/* <input
                         type="number"
                         className="select_container_Inp"
@@ -636,7 +691,11 @@ const HomePage = () => {
                     </div>
                 </div>
                 <div>
-                    <label className="dropdownLabel">Temp Kharif1</label>
+                    <label className="dropdownLabel">
+                        {language === "en"
+                            ? "Temp Kharif1"
+                            : "খড়িফ-1 মৌসুমে তাপমাত্রা"}
+                    </label>
                     {/* <input
                         type="number"
                         className="select_container_Inp"
@@ -666,7 +725,11 @@ const HomePage = () => {
                     </div>
                 </div>
                 <div>
-                    <label className="dropdownLabel">Temp Kharif 2</label>
+                    <label className="dropdownLabel">
+                        {language === "en"
+                            ? "Temp Kharif 2"
+                            : "খড়িফ-2  মৌসুমে তাপমাত্রা"}
+                    </label>
                     {/* <input
                         type="number"
                         className="select_container_Inp"
@@ -696,7 +759,9 @@ const HomePage = () => {
                     </div>
                 </div>
                 <div>
-                    <label className="dropdownLabel">Rain Robi</label>
+                    <label className="dropdownLabel">
+                        {language === "en" ? "Rain Robi" : "রবি মৌসুমে বৃষ্টি"}
+                    </label>
                     {/* <input
                         type="number"
                         className="select_container_Inp"
@@ -724,7 +789,11 @@ const HomePage = () => {
                     </div>
                 </div>
                 <div>
-                    <label className="dropdownLabel">Rain Kharif1</label>
+                    <label className="dropdownLabel">
+                        {language === "en"
+                            ? "Rain Kharif1"
+                            : "খড়িফ-1 মৌসুমে বৃষ্টি"}
+                    </label>
                     {/* <input
                         type="number"
                         className="select_container_Inp"
@@ -752,7 +821,11 @@ const HomePage = () => {
                     </div>
                 </div>
                 <div>
-                    <label className="dropdownLabel">Rain Kharif2</label>
+                    <label className="dropdownLabel">
+                        {language === "en"
+                            ? "Rain Kharif2"
+                            : "খড়িফ-2 মৌসুমে বৃষ্টি"}
+                    </label>
                     {/* <input
                         type="number"
                         className="select_container_Inp"
@@ -781,10 +854,18 @@ const HomePage = () => {
                 </div>
             </div>
 
-            <h3>Model Selection</h3>
+            <h3>
+                {language === "en"
+                    ? "Machine Learning Model Selection "
+                    : "মেশিন লার্নিং মডেল নির্বাচন"}
+            </h3>
             <div className="form_input_container_top">
                 <div>
-                    <label className="dropdownLabel">Model With Accuracy</label>
+                    <label className="dropdownLabel">
+                        {language === "en"
+                            ? "Model With Accuracy"
+                            : "সঠিকতা সহ মডেল"}
+                    </label>
                     <select
                         className="select_container"
                         onChange={(data) => {
@@ -793,13 +874,19 @@ const HomePage = () => {
                         name="model_number"
                     >
                         <option value="2">
-                            Random Forest Classifier -- 96% accuracy
+                            {language === "en"
+                                ? "Random Forest Classifier -- 96% accuracy"
+                                : "র‍্যান্ডম ফরেস্ট ক্লাসিফায়ার -- 96% সঠিকতা"}
                         </option>
                         <option value="1">
-                            Decision Tree -- 95.4% accuracy
+                            {language === "en"
+                                ? "Decision Tree -- 95.4% accuracy"
+                                : "ডিসিশন ট্রি -- 95.4% সঠিকতা"}
                         </option>
                         <option disabled value="3">
-                            K-nearest Neighbours -- 94.4% accuracy
+                            {language === "en"
+                                ? "K-nearest Neighbours -- 94.4% accuracy"
+                                : "কে-নিয়ারেস্ট নেইবোর্স -- 94.4% সঠিকতা"}
                         </option>
                     </select>
                 </div>
@@ -807,7 +894,9 @@ const HomePage = () => {
 
             <div className="prediction_container">
                 <button className="submit_button" onClick={handleSubmit}>
-                    🧠 Predict Cropping Pattern
+                    {language === "en"
+                        ? " 🧠 Predict Cropping Pattern"
+                        : " 🧠 ফসল বিন্যাস প্রতিবেদন করুন"}
                 </button>
                 <div className="prediction_output">
                     {isLOading && <div className="loader"></div>}

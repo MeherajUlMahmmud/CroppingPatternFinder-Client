@@ -26,6 +26,23 @@
             font-weight: bold;
             padding: 10px;
             margin-bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .select {
+            height: 100%;
+            width: 100%;
+            background-color: #252533;
+            color: #e9eee9;
+            outline: none;
+            border: none;
+            font-size: 20px;
+            .option {
+                background-color: #252533;
+                color: #e9eee9;
+                outline: none;
+            }
         }
 
         .navigationBtn {
