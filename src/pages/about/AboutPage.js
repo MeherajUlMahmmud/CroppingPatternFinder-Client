@@ -32,13 +32,13 @@ const AboutPage = () => {
                         so that users can get better results.
                     </p>
                 </div>
-
+                {/* 
                 <div className="top_image">
                     <img
                         src={require("../../media/ai_brain.gif")}
                         alt="cropping pattern"
                     />
-                </div>
+                </div> */}
             </div>
 
             <div className="body_container">

@@ -4,6 +4,7 @@ import HomePage from "./pages/Home/HomePage.js";
 import "./app.scss";
 import AboutPage from "./pages/About/AboutPage.js";
 import DatasetPage from "./pages/DatasetPage/DatasetPage.js";
+import AutoCpPrediction from "./pages/Map/AutoCpPrediction.js";
 
 const App = () => {
     const [page, setPage] = useState("#home");
@@ -21,6 +22,7 @@ const App = () => {
                         ? "Cropping Pattern Prediction System"
                         : `ক্রপিং প্যাটার্ন পূর্বাভাস সিস্টেম`}
                 </div>
+
                 <div
                     className={
                         page === "#home"
@@ -30,8 +32,20 @@ const App = () => {
                     onClick={() => handlePageChange("#home")}
                 >
                     {language === "en"
-                        ? "CP Prediction"
-                        : "ক্রপিং প্যাটার্ন পূর্বাভাস "}
+                        ? "Advance CP Prediction"
+                        : "উন্নত ক্রপিং প্যাটার্ন পূর্বাভাস "}
+                </div>
+                <div
+                    className={
+                        page === "#auto"
+                            ? "navigationBtn active"
+                            : "navigationBtn"
+                    }
+                    onClick={() => handlePageChange("#auto")}
+                >
+                    {language === "en"
+                        ? "Automatic Cropping Pattern Prediction"
+                        : "স্বয়ংক্রিয় ক্রপিং প্যাটার্ন পূর্বাভাস"}
                 </div>
                 <div
                     className={
@@ -88,6 +102,7 @@ const App = () => {
             </div>
             <div className="Window">
                 {page === "#home" && <HomePage language={language} />}
+                {page === "#auto" && <AutoCpPrediction language={language} />}
                 {page === "#cpList" && <CpList language={language} />}
                 {page === "#about" && <AboutPage language={language} />}
                 {page === "#dataset" && <DatasetPage language={language} />}

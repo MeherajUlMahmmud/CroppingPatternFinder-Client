@@ -85,7 +85,7 @@ const DatasetPage = () => {
         <div className="DatasetPageContainer">
             <p className="headerText">Found Districts</p>
             <div>
-                <iframe
+                {/* <iframe
                     title=""
                     aria-label="Map"
                     id="datawrapper-chart-EkIed"
@@ -94,6 +94,13 @@ const DatasetPage = () => {
                     style={{ border: "none" }}
                     width="100%"
                     height="683"
+                ></iframe> */}
+                <iframe
+                    style={{ border: "none" }}
+                    width="100%"
+                    height="550"
+                    title="static_html"
+                    src="../map.html"
                 ></iframe>
             </div>
             <p className="headerText">
