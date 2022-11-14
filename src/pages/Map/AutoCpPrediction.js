@@ -91,7 +91,11 @@ export default function AutoCpPrediction({ language }) {
                 <h3>{language === "en" ? "Your Location" : "আপনার অবস্থান"}</h3>
                 <div className="gridItem">
                     <div>
-                        <h3>Your Details</h3>
+                        <h3>
+                            {language === "en"
+                                ? "Your Location"
+                                : "আপনার অবস্থান"}
+                        </h3>
                         <p>
                             <i class="fa-solid fa-location-dot"></i>{" "}
                             {language === "en" ? "Latitude" : "অক্ষাংশ"}:{" "}

@@ -23,18 +23,18 @@
                 font-size: 25px;
                 font-weight: bold;
 
+                @media screen and (max-width: 768px) {
+                    font-size: 18px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+
                 a {
                     text-decoration: none;
                     color: #1ac;
                 }
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            div {
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
             }
         }
     }
@@ -65,10 +65,21 @@
             padding-top: 0px;
             padding-bottom: 30px;
         }
+
+        .headerText {
+            @media screen and (max-width: 768px) {
+                font-size: 20px;
+                text-align: center;
+            }
+        }
         p {
             font-size: 15px;
             color: #000;
             max-width: 530px;
+            @media screen and (max-width: 768px) {
+                text-align: center;
+                max-width: 100%;
+            }
         }
         .top_image {
             width: 100%;
